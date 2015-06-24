@@ -17,11 +17,11 @@
 {% block cuerpo %}
     <h2>Beneficios del taller</h2>
   {% for beneficio in beneficios %}
+    <p><img src="/media/{{ beneficio.imagen }}" style="width: 150px" /></p>
     <p>{{ beneficio.descripcion }}</p>
   {% endfor %}
     <h2>Con el apoyo de:</h2>
   {% for colaborador in colaboradores %}
-    <p>{{ colaborador.nombre }}</p>
-    <p>{{ colaborador.link }}</p>
+  <a href="{{ colaborador.link }}"><img src="/media/{{ colaborador.imagen }}" style="width:100px" alt={{ colaborador.nombre }} /></a>
   {% endfor %}
 {% endblock %}
