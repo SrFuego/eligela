@@ -1,0 +1,35 @@
+{# Lineas jodidas: ninguna #}
+
+{% comment %}
+  Desarrollado por: Sr. Fuego
+  Elige.la
+{% endcomment %}
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>{% block titulo %}{% endblock %} | Elige.la</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'principal:index' %}">Inicio</a></li>
+          <li><a href="{% url 'principal:conferencia' %}">#eligelaConferencia</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      {% block encabezado %}
+      {% endblock %}
+    </header>
+    {% block cuerpo %}{% endblock %}
+
+
+    <footer>
+      <a href="#">/elige.la.comunidad<a>
+      <a href="#">/eligela_<a>
+    </footer>
+  </body>
+</html>

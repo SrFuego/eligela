@@ -1,0 +1,27 @@
+{% extends 'principal/base.html' %}
+
+{# Lineas jodidas: ninguna #}
+
+{% comment %}
+  Desarrollado por: Sr. Fuego
+  Elige.la
+{% endcomment %}
+
+{% block titulo %}Bienvenido{% endblock %}
+
+{% block encabezado %}
+<div>Descubre tu vocacion y elige tu carrera profesional con un taller dinamico y diferente</div>
+<button>REGISTRA TU COLE YA</button>
+{% endblock %}
+
+{% block cuerpo %}
+    <h2>Beneficios del taller</h2>
+  {% for beneficio in beneficios %}
+    <p>{{ beneficio.descripcion }}</p>
+  {% endfor %}
+    <h2>Con el apoyo de:</h2>
+  {% for colaborador in colaboradores %}
+    <p>{{ colaborador.nombre }}</p>
+    <p>{{ colaborador.link }}</p>
+  {% endfor %}
+{% endblock %}
