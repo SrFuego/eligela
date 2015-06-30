@@ -31,17 +31,31 @@ class Colaborador(models.Model):
         return "beneficios/{0}/{1}".format(self.nombre, str(filename))
 
     def colaborador_imagen_administrador(self):
-        if not self.enunciado_imagen:
+        if not self.imagen:
             return None
 
-        imagenHTML = '<img src="/media/{0}" style="width: 150px" />'.format(
-            self.enunciado_imagen)
+        imagenHTML = '<img src="/media/{0}" style="width: 75px" />'.format(
+            self.imagen
+        )
 
-        return imagenHTML
+        if ('.jpg' in imagenHTML):
+            return imagenHTML.replace('.jpg', '.miniatura.jpg')
+        elif ('.jpeg' in imagenHTML):
+            return imagenHTML.replace('.jpeg', '.miniatura.jpeg')
+        elif ('.png' in imagenHTML):
+            return imagenHTML.replace('.png', '.miniatura.png')
+        elif ('.gif' in imagenHTML):
+            return imagenHTML.replace('.gif', '.miniatura.gif')
+        else:
+            return imagenHTML
 
     colaborador_imagen_administrador.allow_tags = True
 
-    imagen = StdImageField(upload_to=image_path)
+    imagen = StdImageField(upload_to=image_path,
+                           variations={
+                               'miniatura': (75, 75)
+                           }
+                           )
     link = models.URLField()
     nombre = models.CharField(max_length=50)
 

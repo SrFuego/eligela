@@ -1,7 +1,5 @@
 {% extends 'principal/base.html' %}
 
-{# Lineas jodidas: ninguna #}
-
 {% comment %}
   Desarrollado por: Sr. Fuego
   Elige.la
@@ -10,18 +8,32 @@
 {% block titulo %}Bienvenido{% endblock %}
 
 {% block encabezado %}
-<div>Descubre tu vocacion y elige tu carrera profesional con un taller dinamico y diferente</div>
-<button>REGISTRA TU COLE YA</button>
+<div class="bg_top">
+  <p>Descubre tu vocacion y elige tu carrera profesional con un taller dinamico y diferente</p>
+  <button>REGISTRA TU COLE YA</button>
+</div>
 {% endblock %}
 
 {% block cuerpo %}
-    <h2>Beneficios del taller</h2>
+  <h2>Beneficios del taller</h2>
   {% for beneficio in beneficios %}
-    <p><img src="/media/{{ beneficio.imagen }}" style="width: 150px" /></p>
+    <img src="/media/{{ beneficio.imagen }}" />
     <p>{{ beneficio.descripcion }}</p>
   {% endfor %}
-    <h2>Con el apoyo de:</h2>
+  <div id="barra-horizontal"></div>
+  <h2>Con el apoyo de:</h2>
+  <div class="row">
   {% for colaborador in colaboradores %}
-  <a href="{{ colaborador.link }}"><img src="/media/{{ colaborador.imagen }}" style="width:100px" alt={{ colaborador.nombre }} /></a>
+    <a href="{{ colaborador.link }}" class="col-xs-4"><img src="/media/{{ colaborador.imagen.miniatura }}" alt={{ colaborador.nombre }} /></a>
   {% endfor %}
+  </div>
 {% endblock %}
+
+{% block pie-de-pagina %}
+<footer>
+  <div class="row">
+    <a href="#" class="col-xs-6"><i class="fa fa-facebook fa-2x red-social-circulo"></i>/elige.la.comunidad</a>
+    <a href="#" class="col-xs-6"><i class="fa fa-twitter fa-2x red-social-circulo"></i>/eligela_</a>
+  </div>
+</footer>
+{% endblock%}

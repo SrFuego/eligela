@@ -1,35 +1,52 @@
-{# Lineas jodidas: ninguna #}
-
 {% comment %}
   Desarrollado por: Sr. Fuego
   Elige.la
 {% endcomment %}
+
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <title>{% block titulo %}{% endblock %} | Elige.la</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="{% static 'principal/css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'principal/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'principal/css/estilos.css' %}">
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li><a href="{% url 'principal:index' %}">Inicio</a></li>
-          <li><a href="{% url 'principal:conferencia' %}">#eligelaConferencia</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contacto</a></li>
-        </ul>
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" id="logo" href="{% url 'principal:index' %}">
+              <img src="{% static 'principal/img/eligela.png' %}" />
+              <p>eligela</p>
+            </a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="{% url 'principal:index' %}">Inicio</a></li>
+              <li><a href="{% url 'principal:conferencia' %}">#eligelaConferencia</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      {% block encabezado %}
-      {% endblock %}
+    </header>
+    {% block encabezado %}{% endblock %}
     </header>
     {% block cuerpo %}{% endblock %}
-
-
-    <footer>
-      <a href="#">/elige.la.comunidad</a>
-      <a href="#">/eligela_</a>
-    </footer>
+    {% block pie-de-pagina %}{% endblock %}
+    <script src="{% static 'principal/js/jquery.js' %}"></script>
+    <script src="{% static 'principal/js/bootstrap.js' %}"></script>
   </body>
 </html>

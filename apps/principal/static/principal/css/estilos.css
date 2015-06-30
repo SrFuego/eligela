@@ -1,0 +1,148 @@
+html {
+  font-family: helvetica;
+  font-size: 16px;
+}
+#barra-horizontal {
+  background: #00669c;
+  height: 2px;
+  width: 85%;
+  margin: 0 auto 0 auto;
+}
+.red-social-circulo {
+  background: #ebebeb;
+  color: #303030;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 4px;
+  border-radius: 50%;
+}
+header{
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+}
+header .navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+header .navbar .navbar-toggle{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  margin: 0;
+}
+header .navbar .navbar-toggle .icon-bar{
+  background-color: #fff;
+}
+header .navbar .navbar-nav{
+  background-color: rgba(255, 255, 255, 0.78);
+}
+header .navbar .navbar-nav > li a{
+  color: #000;
+}
+.bg_top{
+  position: relative;
+  background-image: url("../img/background.jpg");
+  background-size: 100%;
+  height: 182px;
+  width: 100%;
+  padding-top: 50px;
+}
+.bg_top > p {
+  clear: left;
+  font-size: 0.9em;
+  margin: 2% 0 0 3%;
+  text-align: left;
+  font-weight: bold;
+  color: #fff;
+  width: 50%;
+  overflow: hidden;
+}
+.bg_top > button {
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #009acf;
+  margin: 4% 0 0 7%;
+  font-weight: bold;
+  border-radius: 7px;
+  overflow: hidden;
+}
+#logo {
+  width: 30px;
+  padding: 0; 
+  color: #ebebeb;
+  float: left;
+  margin: -5px auto auto 10px;
+}
+#logo > img {
+  display: inline-block;
+  width: 100%;
+  float: left;
+}
+#logo > p {
+  margin: 13px auto auto 35px;
+}/*
+header {
+  background-image: url("../img/background.jpg");
+  background-size: 100%;
+  height: 182px;
+}
+header > p {
+  clear: left;
+  font-size: 0.9em;
+  margin: 2% 0 0 3%;
+  text-align: left;
+  font-weight: bold;
+  color: #fff;
+  width: 50%;
+  overflow: hidden;
+}
+header > button {
+  font-size: 0.8em;
+  color: #fff;
+  background-color: #009acf;
+  margin: 4% 0 0 7%;
+  font-weight: bold;
+  border-radius: 7px;
+  overflow: hidden;
+}*/
+h2 {
+  text-align: center;
+}
+img {
+  display: block;
+  margin: 10px auto 30px auto;
+}
+p {
+  font-size: 1.2em;
+  margin: 10px auto 30px auto;
+  text-align: center;
+  width: 63%;
+}
+footer {
+  background: #303030;
+  height: 70px;
+  padding-left: 4%;
+  padding-top: 22px;
+  width: 100%;
+  position: absolute;
+  overflow-x: hidden;
+  left: 0;
+}
+footer > div > a {
+  color: #ebebeb;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 0;
+}
+.col-xs-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.row {
+  margin: 0;
+}
