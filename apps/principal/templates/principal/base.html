@@ -45,7 +45,12 @@
     {% block encabezado %}{% endblock %}
     </header>
     {% block cuerpo %}{% endblock %}
-    {% block pie-de-pagina %}{% endblock %}
+    <footer>
+      <div class="row">
+        <a href="#" class="col-xs-6"><i class="fa fa-facebook fa-2x red-social-circulo"></i>/elige.la.comunidad</a>
+        <a href="#" class="col-xs-6"><i class="fa fa-twitter fa-2x red-social-circulo"></i>/eligela_</a>
+      </div>
+    </footer>
     <script src="{% static 'principal/js/jquery.js' %}"></script>
     <script src="{% static 'principal/js/bootstrap.js' %}"></script>
   </body>

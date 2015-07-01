@@ -16,10 +16,14 @@
 
 {% block cuerpo %}
   <h2>Beneficios del taller</h2>
-  {% for beneficio in beneficios %}
-    <img src="/media/{{ beneficio.imagen }}" />
-    <p>{{ beneficio.descripcion }}</p>
-  {% endfor %}
+  <div class="row">
+    {% for beneficio in beneficios %}
+      <div class="col-sm-4">
+        <img src="/media/{{ beneficio.imagen }}" />
+        <p>{{ beneficio.descripcion }}</p>
+      </div>
+    {% endfor %}
+  </div>
   <div id="barra-horizontal"></div>
   <h2>Con el apoyo de:</h2>
   <div class="row">
@@ -28,12 +32,3 @@
   {% endfor %}
   </div>
 {% endblock %}
-
-{% block pie-de-pagina %}
-<footer>
-  <div class="row">
-    <a href="#" class="col-xs-6"><i class="fa fa-facebook fa-2x red-social-circulo"></i>/elige.la.comunidad</a>
-    <a href="#" class="col-xs-6"><i class="fa fa-twitter fa-2x red-social-circulo"></i>/eligela_</a>
-  </div>
-</footer>
-{% endblock%}
