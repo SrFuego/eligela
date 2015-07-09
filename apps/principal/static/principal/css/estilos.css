@@ -124,6 +124,11 @@ footer > div > a {
   margin: 0;
 }
 
+.fondo-menu {
+  background-color: #303030;
+  height: 43px;
+}
+
 @media (min-width: 481px) {
   .bg_top{
     height: 363px;
