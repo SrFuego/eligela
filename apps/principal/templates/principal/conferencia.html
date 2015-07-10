@@ -1,5 +1,5 @@
 {% extends 'principal/base.html' %}
-
+{% load embed_video_tags %}
 {% comment %}
   Desarrollado por: Sr. Fuego
   Elige.la
@@ -13,10 +13,32 @@
 
 {% block cuerpo %}
   {% for carrera in carreras %}
-    <h1>{{ carrera.nombre }}</h1>
-    <h3>{{ carrera.expositor }}</h3>
-    <p>{{ carrera.expositorDescripcion }}</p>
-    <h3>{{ carrera.expositor }} en vivo</h3>
-    <p>{{ carrera.video }}</p>
+    <div class="container">
+      <div class="titulo-conferencia">
+        <h2>{{ carrera.nombre }}</h2>
+      </div>
+      <div class="video-container">
+        {% video carrera.video as mivideo %}
+          <iframe width="560" height="315" src="{{ mivideo.url }}" frameborder="0" allowfullscreen></iframe>
+        {% endvideo %}
+      </div>
+      <div class="expositor">
+        <h3>{{ carrera.expositor }}</h3>
+        <img src="/media/{{ carrera.foto.miniatura }}" />
+        <p>{{ carrera.expositor_Descripcion }}</p>
+      </div>
+        <h3>{{ carrera.expositor }} en vivo</h3>
+        {% if carrera.video_en_vivo %}
+          {% video carrera.video_en_vivo as mivideoenvivo %}
+          <div class="video-container">
+            <iframe width="560" height="315" src="{{ mivideoenvivo.url }}" frameborder="0" allowfullscreen></iframe>
+          </div>
+          {% endvideo %}
+        {% else %}
+          <img src="/media/{{ carrera.imagen_en_vivo }}" width=100% />
+        {% endif %}
+        <h3>Mira otras entrevistas</h3>
+        <p>En construcción...</p>
+    </div>
   {% endfor %}
 {% endblock %}
