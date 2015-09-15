@@ -6,6 +6,7 @@ from django.views.static import serve
 
 
 from apps.principal import urls as principal_urls
+from apps.contacto import urls as contacto_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -13,6 +14,11 @@ urlpatterns = [
                       namespace='principal',
                       app_name='principal'
                       )
+        ),
+    url(r'^contacto/', include(contacto_urls,
+                               namespace='contacto',
+                               app_name='contacto'
+                               )
         ),
 ]
 

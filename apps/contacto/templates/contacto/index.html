@@ -1,0 +1,57 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="{% static 'contacto/css/main.css' %}">
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="center-text">
+          <h1>INSCRIBE TU COLEGIO</h1>
+          <p>
+            Haz que tu colegio sea uno de los seleccionados <br> para realizar los talleres vocacionales.
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <!-- FORM ============ -->
+          <div class="col-sm-4">
+              <form method="POST">{% csrf_token %}
+                  <!-- NAME -->
+                  <div class="form-group">
+                      <label>Nombre del colegio</label>
+                      <input id="id_nombre" maxlength="100" name="nombre" type="text" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                      <label>Distrito</label>
+                      <input id="id_distrito" maxlength="100" name="distrito" type="text" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                      <label>Telefono del colegio (Opcional)</label>
+                      <input id="id_telefono" maxlength="9" name="telefono" type="text" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                      <label>Direccion del colegio</label>
+                      <input id="id_direccion" maxlength="100" name="direccion" type="text" class="form-control" />
+                  </div>
+                  <div class="form-group">
+                    <label for="">¿Por qué deberiamos ir a tu colegio?</label>
+                    <textarea cols="40" id="id_asunto" name="asunto" rows="10" class="form-control"></textarea>
+                  </div>
+                  <div class="form-group text-center">
+                    <input type="submit" class="btn btn-primary" value="Enviar" />
+                  </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+      </div>
+    </section>
+  </body>
+</html>
