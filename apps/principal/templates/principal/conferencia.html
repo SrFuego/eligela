@@ -27,6 +27,12 @@
         <img src="/media/{{ carrera.foto.miniatura }}" />
         <p>{{ carrera.expositor_Descripcion }}</p>
       </div>
+
+      {# caja de twitter #}
+      <a class="twitter-timeline" href="https://twitter.com/hashtag/eligelaentrevista" data-widget-id="644771400008486912">Tweets sobre #eligelaentrevista</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      {# caja de twitter #}
+      
         <h3>{{ carrera.expositor }} en vivo</h3>
         {% if carrera.video_en_vivo %}
           {% video carrera.video_en_vivo as mivideoenvivo %}
