@@ -13,10 +13,10 @@ class IndexView(TemplateView):
         return context
 
 
-class ConferenciaView(TemplateView):
-    template_name = 'principal/conferencia.html'
+class EntrevistaView(TemplateView):
+    template_name = 'principal/entrevista.html'
 
     def get_context_data(self, **kwargs):
-        context = super(ConferenciaView, self).get_context_data(**kwargs)
+        context = super(EntrevistaView, self).get_context_data(**kwargs)
         context['carreras'] = Carrera.objects.all()
         return context

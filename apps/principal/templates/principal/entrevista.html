@@ -1,0 +1,61 @@
+{% extends 'principal/base.html' %}
+{% load embed_video_tags %}
+{% comment %}
+  Desarrollado por: Sr. Fuego
+  Elige.la
+{% endcomment %}
+
+{% block titulo %}Conferencia{% endblock %}
+
+{% block encabezado %}
+<div class="fondo-menu"></div>
+{% endblock %}
+
+{% block cuerpo %}
+  {% for carrera in carreras %}
+    <div class="container">
+      <div class="titulo-conferencia">
+        <h2>{{ carrera.nombre }}</h2>
+      </div>
+      <div class="row">
+        <div class="video-container col-md-8">
+          {% video carrera.video as mivideo %}
+            <iframe width="560" height="315" src="{{ mivideo.url }}" frameborder="0" allowfullscreen></iframe>
+          {% endvideo %}
+        </div>
+
+
+        <div class="col-md-4">
+          {# caja de twitter #}
+          <a class="twitter-timeline" href="https://twitter.com/hashtag/eligelaentrevista" data-widget-id="644771400008486912">Tweets sobre #eligelaentrevista</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+          {# caja de twitter #}
+        </div>
+      </div>
+
+      <div class="expositor">
+        <h3>{{ carrera.expositor }}</h3>
+        <img src="/media/{{ carrera.foto.miniatura }}" />
+        <p>{{ carrera.expositor_Descripcion }}</p>
+      </div>
+
+      <div style="margin: 50px 40%;">
+        <div class="fb-share-button" data-href="https://www.facebook.com/elige.la.comunidad" data-layout="button_count"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://twitter.com/eligela_" data-via="eligela_" data-lang="es" data-related="eligela_" style="padding-top: 50px;">Twittear</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+
+      <h3>En vivo</h3>
+        {% if carrera.video_en_vivo %}
+          {% video carrera.video_en_vivo as mivideoenvivo %}
+          <div class="video-container">
+            <iframe width="560" height="315" src="{{ mivideoenvivo.url }}" frameborder="0" allowfullscreen></iframe>
+          </div>
+          {% endvideo %}
+        {% else %}
+          <img src="/media/{{ carrera.imagen_en_vivo }}" width=100% />
+        {% endif %}
+
+    </div>
+  {% endfor %}
+{% endblock %}

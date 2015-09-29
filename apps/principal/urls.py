@@ -1,8 +1,8 @@
 from django.conf.urls import url
 
-from . import views
+from .views import IndexView, EntrevistaView
 
 urlpatterns = [
-    url(r'^$', views.IndexView.as_view(), name='index'),
-    url(r'^conferencia/$', views.ConferenciaView.as_view(), name='conferencia'),
+    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^entrevista/$', EntrevistaView.as_view(), name='entrevista'),
 ]
