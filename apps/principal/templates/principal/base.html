@@ -4,7 +4,6 @@
 {% endcomment %}
 
 {% load staticfiles %}
-{% load embed_video_tags %}
 
 <!DOCTYPE html>
 <html lang="es">
@@ -12,9 +11,7 @@
     <title>{% block titulo %}{% endblock %} | Elige.la</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="stylesheet" href="{% static 'principal/css/font-awesome.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'principal/css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'principal/css/estilos.css' %}">
+    {% block estilos-estaticos %}{% endblock %}
   </head>
   <body>
     <div id="fb-root"></div>

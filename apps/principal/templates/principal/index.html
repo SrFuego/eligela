@@ -1,4 +1,5 @@
 {% extends 'principal/base.html' %}
+{% load staticfiles %}
 
 {% comment %}
   Desarrollado por: Sr. Fuego
@@ -7,9 +8,15 @@
 
 {% block titulo %}Bienvenido{% endblock %}
 
+{% block estilos-estaticos %}
+<link rel="stylesheet" href="{% static 'principal/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'principal/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'principal/css/estilos.css' %}">
+{% endblock %}
+
 {% block encabezado %}
 <div class="bg_top">
-  <p>Descubre tu vocacion y elige tu carrera profesional con un taller dinamico y diferente</p>
+  <p>Descubre tu vocación y elige tu carrera profesional con un taller dinámico y diferente</p>
   <a href="{% url 'contacto:index' %}"><button>REGISTRA TU COLE YA</button></a>
 </div>
 {% endblock %}

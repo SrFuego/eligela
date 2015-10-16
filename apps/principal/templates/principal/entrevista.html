@@ -1,11 +1,18 @@
 {% extends 'principal/base.html' %}
+{% load staticfiles %}
 {% load embed_video_tags %}
 {% comment %}
   Desarrollado por: Sr. Fuego
   Elige.la
 {% endcomment %}
 
-{% block titulo %}Conferencia{% endblock %}
+{% block titulo %}Entrevista{% endblock %}
+
+{% block estilos-estaticos %}
+<link rel="stylesheet" href="{% static 'principal/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" href="{% static 'principal/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" href="{% static 'principal/css/estilos.css' %}">
+{% endblock %}
 
 {% block encabezado %}
 <div class="fondo-menu"></div>
