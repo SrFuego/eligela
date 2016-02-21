@@ -1,4 +1,5 @@
 from django.views.generic.base import TemplateView
+from django.views.generic import RedirectView
 
 from .models import Beneficio, Carrera, Colaborador
 
@@ -20,3 +21,8 @@ class EntrevistaView(TemplateView):
         context = super(EntrevistaView, self).get_context_data(**kwargs)
         context['carreras'] = Carrera.objects.all()
         return context
+
+
+class CarmenGitHubView(RedirectView):
+    permanent = True
+    url = 'http://carmenluyo.github.io/elige.la/'
